@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>Vue.jsのチュートリアル</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap4.2 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- フォントのライブラリ -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300">
+    <!-- Fontawesome -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!-- vue.jsのライブラリ -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="reset.css">
+  </head>
+
+  <body class="m-2">
+    <div class="h2 bg-secondary text-white text-center p-2">Vue.jsのチュートリアル</div>
+    <a class="btn btn-primary text-white mt-2 mb-3" href="https://jp.vuejs.org/v2/guide/index.html">公式サイト</a>
+
+    <div id="app-1">
+      {{ message }}
+    </div>
+
+    <div id="app-2">
+      <span v-bind:title="message">
+        v-bind マウスホバーしたらテキストが浮き出るよ!
+      </span>
+    </div>
+
+    <div id="app-3">
+      <span v-if="seen">
+        v-if コンソールでapp3.seen = falseを入力するとこの文字が消えるよ。
+      </span>
+    </div>
+
+    <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+      <!-- app4.todos.push({ text: 'New item' }) と入力するとアイテム追加される -->
+    </div>
+
+    <div id="app-5">
+      <p>{{ message }}</p>
+      <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+
+    <div id="app-6">
+      <p>{{ message }}</p>
+      <input v-model="message">
+    </div>
+
+    <div id="app-7">
+      <ol>
+        <!-- 
+          各 todo-item の内容を表す todo オブジェクトを与えます。
+          これにより内容は動的に変化します。
+          また後述する "key" を各コンポーネントに提供する必要があります。
+        -->
+        <todo-item
+          v-for="item in groceryList"
+          v-bind:todo="item"
+          v-bind:key="item.id"
+        ></todo-item>
+      </ol>
+    </div>
+
+    <div id="app-8">
+      <p>Using mustaches: {{ rawHtml }}</p>
+      <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+    </div>
+
+    <div id="app-9">
+      <p>Original message: "{{ message }}"</p>
+      <p>Computedプロパティ reversed message: "{{ reversedMessage }}"</p>
+    </div>
+
+    <div id="app-10">{{ fullName }}</div>
+
+    <!-- コンソールでapp11.fullName = 'Jon Doe'と入力すると値が更新される -->
+    <div id="app-11">app11.fullName = 'Jon Doe'と入力すると値が更新される : {{ fullName }}</div>
+
+    <!-- 何これ全然わからん・・・ -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+    <div id="watch-example">
+      <p>
+        yes/no 質問してみて:
+        <input v-model="question">
+      </p>
+      <p>{{ answer }}</p>
+    </div>
+
+    <!-- 何これ全然わからん・・・ -->
+    <div id="app-12">
+      <div v-bind:class="classObject">adafs</div>
+    </div>
+
+    <div id="app-13">
+      <div v-bind:class="[isActive ? activeClass : '', errorClass]">何が起こるというんだ。</div>
+    </div>
+
+    <div id="example-1">
+      <button v-on:click="counter += 1">Add 1</button>
+      <p>The button above has been clicked {{ counter }} times.</p>
+    </div>
+
+    <div id="example-2">
+      <!-- `greet` は、あらかじめ定義したメソッドの名前 -->
+      <button v-on:click="greet">Greet</button>
+    </div>
+
+    <!-- これ使えそう -->
+    <div id="example-3">
+      <button v-on:click="say('hi')">Say hi</button>
+      <button v-on:click="say('what')">Say what</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- jQueryのライブラリ -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- js -->
+    <script type="text/javascript" src="vue.js"></script>
+  </body>
+</html>

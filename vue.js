@@ -232,3 +232,38 @@ new Vue({
     }
   }
 })
+
+var v_model_1 = new Vue ({
+  el:'#v-model-1',
+  data: {
+    message:'test'
+  }
+})
+
+var v_model_2 = new Vue ({
+  el:'#v-model-2',
+  data: {
+    checkedNames: []
+  }
+})
+
+var v_model_3 = new Vue ({
+  el:'#v-model-3',
+  data: {
+    picked: ''
+  }
+})
+
+var v_model_4 = new Vue ({
+  el:'#v-model-4',
+  data: {
+    selected: ''
+  }
+})
+
+var v_model_5 = new Vue ({
+  el:'#v-model-5',
+  data: {
+    selected: ''
+  }
+})

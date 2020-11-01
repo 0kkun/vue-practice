@@ -122,10 +122,68 @@
       <button v-on:click="say('what')">Say what</button>
     </div>
 
+    <div id="v-model-1">
+      <input v-model="message" placeholder="edit me">
+      <p>Message is: {{ message }}</p>
+    </div>
+
+    <div id="v-model-2">
+      <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+      <label for="jack">Jack</label>
+      <input type="checkbox" id="john" value="John" v-model="checkedNames">
+      <label for="john">John</label>
+      <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+      <label for="mike">Mike</label>
+      <br>
+      <span>Checked names: {{ checkedNames }}</span>
+    </div>
+
+    <div id="v-model-3">
+      <input type="radio" id="one" value="One" v-model="picked">
+      <label for="one">One</label>
+      <br>
+      <input type="radio" id="two" value="Two" v-model="picked">
+      <label for="two">Two</label>
+      <br>
+      <span>Picked: {{ picked }}</span>
+    </div>
+
+    <!-- 使えそう -->
+    <div id="v-model-4">
+      <select v-model="selected">
+        <option disabled value="">Please select one</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
+      <span>Selected: {{ selected }}</span>
+    </div>
+
+    <div id="v-model-5">
+
+    </div>
 
 
+    <div id="v-model-5">
+    </div>
 
+    <div id="v-model-5">
+    </div>
 
+    <div id="v-model-5">
+    </div>
+
+    <div id="v-model-5">
+    </div>
+
+    <div id="v-model-5">
+    </div>
+
+    <div id="v-model-5">
+    </div>
+
+    <div id="v-model-5">
+    </div>
 
 
 

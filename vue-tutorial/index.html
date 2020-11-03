@@ -12,9 +12,6 @@
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <!-- vue.jsのライブラリ -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-    <!-- css -->
-    <link rel="stylesheet" href="reset.css">
   </head>
 
   <body class="m-2">
@@ -159,31 +156,30 @@
       <span>Selected: {{ selected }}</span>
     </div>
 
-    <div id="v-model-5">
-
+    <div id="components-demo">
+      <button-counter></button-counter>
+      <button-counter></button-counter>
+      <button-counter></button-counter>
     </div>
 
 
-    <div id="v-model-5">
+    <div id="blog-post-demo">
+      <blog-post
+        v-for="post in posts"
+        v-bind:key="post.id"
+        v-bind:post="post"
+      ></blog-post>
     </div>
 
-    <div id="v-model-5">
+
+    <custom-input v-model="searchText"></custom-input>
+
+    <div id='alert-box-demo'>
+      <alert-box>
+        Something bad happened.
+      </alert-box>
     </div>
 
-    <div id="v-model-5">
-    </div>
-
-    <div id="v-model-5">
-    </div>
-
-    <div id="v-model-5">
-    </div>
-
-    <div id="v-model-5">
-    </div>
-
-    <div id="v-model-5">
-    </div>
 
 
 

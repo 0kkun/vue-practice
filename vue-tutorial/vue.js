@@ -261,9 +261,62 @@ var v_model_4 = new Vue ({
   }
 })
 
-var v_model_5 = new Vue ({
-  el:'#v-model-5',
+
+// button-counter と呼ばれる新しいコンポーネントを定義します
+// コンポーネントをグローバルに登録している。
+Vue.component('button-counter', {
+  // 各インスタンスが返されるデータオブジェクトの独立したコピーを保持できるため
+  // コンポーネントの data オプションは関数でなければなりません。
+  data: function () {
+    return {
+      count: 0
+    }
+  },
+  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+})
+new Vue({ el: '#components-demo' })
+
+
+
+Vue.component('blog-post', {
+  //props オプションを使用して、このコンポーネントが受け入れるプロパティを宣言
+  props: ['post'],
+  template: `
+    <div class="blog-post"> 
+      <h1>{{ post.title }}</h1>
+      <p>{{ post.content }}</p>
+    </div>
+    `
+})
+new Vue({
+  el: '#blog-post-demo',
+  // data に投稿の配列
   data: {
-    selected: ''
+    posts: [
+      { id: 1, title: 'My journey with Vue', content: 'contentcontentcontent1' },
+      { id: 2, title: 'Blogging with Vue', content: 'contentcontentcontent2' },
+      { id: 3, title: 'Why Vue is so fun', content: 'contentcontentcontent3' }
+    ]
   }
 })
+
+Vue.component('custom-input', {
+  props: ['value'],
+  template: `
+    <input
+      v-bind:value="value"
+      v-on:input="$emit('input', $event.target.value)"
+    >
+  `
+})
+
+Vue.component('alert-box', {
+  template: `
+    <div class="demo-alert-box">
+      <strong>Error!</strong>
+      <slot></slot>
+    </div>
+  `
+})
+
+new Vue({el:'#alert-box-demo'})
